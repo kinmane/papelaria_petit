@@ -72,6 +72,78 @@ footer {
   border-top: 1px solid var(--hover);
 }
 
+/* Links da seção de contato */
+.contato-info a,
+.contato-info a:visited {
+  color: var(--marrom);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.contato-info a:hover,
+.contato-info a:focus {
+  color: var(--marrom-claro);
+  text-decoration: none;
+}
+
+.btn-marrom {
+  background-color: var(--marrom);
+  color: #fff;
+  border: none;
+  border-radius: 30px; /* Borda bem arredondada */
+  padding: 0.5rem 2rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(107, 63, 38, 0.08);
+}
+
+.btn-marrom:hover,
+.btn-marrom:focus {
+  background-color: var(--marrom-claro);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(107, 63, 38, 0.12);
+}
+
+.seta-mais-opcoes {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: transparent;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: var(--marrom);
+}
+
 @media (max-width: 768px) {
   header {
     padding: 1rem;
@@ -85,4 +157,49 @@ footer {
   .navbar-nav {
     text-align: center;
   }
+}
+
+.card-produto {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: transform 0.2s;
+}
+
+.card-produto:hover {
+  transform: translateY(-5px);
+}
+
+.card-produto img {
+  object-fit: cover;
+  height: 200px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.seta-mais-opcoes {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: transparent;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.seta-mais-opcoes svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--marrom);
+}
+
+.seta-mais-opcoes svg circle {
+  fill: var(--hover);
+}
+
+.seta-mais-opcoes svg path {
+  fill: none;
+  stroke: var(--marrom);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }

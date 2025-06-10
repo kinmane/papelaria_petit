@@ -65,5 +65,3 @@ papelaria_petit/
 - https://kinmane.github.io/papelaria_petit/
 
 ---
-
-Desenvolvido com carinho para a Papelaria Petit.

@@ -20,11 +20,10 @@ papelaria_petit/
 ├── img/                # Imagens do site (logo, produtos, serviços, etc)
 │   ├── produtos/
 │   └── servicos/
-├── js/                 # Scripts JavaScript organizados
-│   ├── main.js
-│   ├── produtos.js
-│   ├── produtos-data.js
-│   └── promocoes.js
+├── main.js
+├── produtos.js
+├── produtos-data.js
+├── promocoes.js
 ├── style.css           # Estilos principais do site
 ├── index.html
 ├── produtos.html
@@ -37,13 +36,13 @@ papelaria_petit/
 ## Como adicionar produtos, serviços ou promoções
 
 - **Produtos:**  
-  Edite o arquivo `js/produtos-data.js` e adicione um novo objeto ao array `produtos`. Cada produto pode ter vários modelos, cada um com sua imagem e descrição.
+  Edite o arquivo `produtos-data.js` e adicione um novo objeto ao array `produtos`. Cada produto pode ter vários modelos, cada um com sua imagem e descrição.
 
 - **Serviços:**  
   No mesmo arquivo, adicione um novo objeto ao array `servicos`.
 
 - **Promoções:**  
-  Edite o arquivo `js/promocoes.js` e adicione/remova objetos do array `promocoes`.
+  Edite o arquivo `promocoes.js` e adicione/remova objetos do array `promocoes`.
 
 ## Tecnologias utilizadas
 
@@ -56,7 +55,7 @@ papelaria_petit/
 
 1. Clone ou baixe este repositório.
 2. Abra o arquivo `index.html` em seu navegador.
-3. Para editar produtos, serviços ou promoções, altere os arquivos JS na pasta `js/`.
+3. Para editar produtos, serviços ou promoções, altere os arquivos JS na raiz do projeto.
 4. Certifique-se de que as imagens estejam nas pastas corretas (`img/produtos/` e `img/servicos/`).
 
 ## Observações

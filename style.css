@@ -104,15 +104,6 @@ footer {
   box-shadow: 0 4px 16px rgba(107, 63, 38, 0.12);
 }
 
-.seta-mais-opcoes {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: transparent;
-  pointer-events: none;
-  z-index: 2;
-}
-
 .card {
   border: none;
   border-radius: 15px;
@@ -202,4 +193,13 @@ footer {
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.logo-grande {
+  max-width: 350px;
+}
+
+.toast-body {
+  color: var(--marrom);
+  font-weight: 500;
 }

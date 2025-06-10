@@ -1,8 +1,7 @@
 // Fechar modais com ESC
 document.addEventListener('keydown', function(event) {
   if (event.key === "Escape") {
-    const modais = document.querySelectorAll('.modal.show');
-    modais.forEach(modal => {
+    document.querySelectorAll('.modal.show').forEach(modal => {
       const modalInstance = bootstrap.Modal.getInstance(modal);
       if (modalInstance) modalInstance.hide();
     });
@@ -26,9 +25,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// Validação do formulário de contato
+// Validação do formulário de contato (só se existir)
 const formContato = document.querySelector('form');
-if (formContato) {
+if (formContato && formContato.querySelector('#email') && formContato.querySelector('#nome') && formContato.querySelector('#mensagem')) {
   const nome = formContato.querySelector('#nome');
   const email = formContato.querySelector('#email');
   const mensagem = formContato.querySelector('#mensagem');
@@ -39,30 +38,20 @@ if (formContato) {
   }
 
   function validarCampos() {
-    const nomeValido = nome.value.trim().length > 0;
+    const nomeValido = nome.value.trim();
     const emailValido = validarEmail(email.value.trim());
-    const mensagemValida = mensagem.value.trim().length > 0;
+    const mensagemValida = mensagem.value.trim();
     btnEnviar.disabled = !(nomeValido && emailValido && mensagemValida);
-
-    // Mostra feedback enquanto digita
-    if (email.value.length > 0) {
-      email.classList.toggle('is-invalid', !emailValido);
-    } else {
-      email.classList.remove('is-invalid');
-    }
+    email.classList.toggle('is-invalid', email.value && !emailValido);
   }
 
-  nome.addEventListener('input', validarCampos);
-  email.addEventListener('input', validarCampos);
-  mensagem.addEventListener('input', validarCampos);
+  [nome, email, mensagem].forEach(el => el.addEventListener('input', validarCampos));
 
   formContato.addEventListener('submit', function(e) {
     e.preventDefault();
-    // Exibe o toast estilizado
     const toastEl = document.getElementById('toastContato');
-    if (toastEl) {
-      const toast = new bootstrap.Toast(toastEl);
-      toast.show();
+    if (toastEl && typeof bootstrap !== "undefined") {
+      new bootstrap.Toast(toastEl).show();
     }
     formContato.reset();
     btnEnviar.disabled = true;
